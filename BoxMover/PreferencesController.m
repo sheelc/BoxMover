@@ -7,13 +7,23 @@
 //
 
 #import "PreferencesController.h"
+#import "BoxMoverSettings.h"
+#import "DisplaySetting.h"
+#import "AppSetting.h"
+#import "SizeSetting.h"
+
+@interface PreferencesController ()
+
+@property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
+
+@end
 
 @implementation PreferencesController
 
 - (id)initWithDisplays:(NSMutableArray *)displays {
   self = [super initWithWindowNibName:NSStringFromClass([self class]) owner:self];
   if (self) {
-    self.displays = [self mergePlistWithActiveDisplays:displays];
+    self.boxMoverSettings = [self mergePlistWithActiveDisplays:displays];
   }
   return self;
 }
@@ -27,33 +37,36 @@
           };
 }
 
-- (NSMutableArray *)mergePlistWithActiveDisplays:(NSMutableArray *)displays {
-  NSMutableArray *merged = [NSMutableArray new];
+- (BoxMoverSettings *)mergePlistWithActiveDisplays:(NSMutableArray *)displays {
+  NSMutableArray *displaySettings = [NSMutableArray new];
   for (NSDictionary *displayInfo in displays) {
-    NSMutableDictionary *displayDictionaryWithApps = [NSMutableDictionary dictionaryWithDictionary:displayInfo];
     NSArray *apps = [self plist][displayInfo[@"productID"]];
-    if (apps) {
-      NSMutableArray *mutableApps = [NSMutableArray new];
+    NSMutableArray *appSettings = [NSMutableArray new];
+
       for (NSDictionary *appDict in apps) {
-        NSMutableDictionary *mutableAppDict = [NSMutableDictionary dictionaryWithDictionary:appDict];
-        NSMutableArray *mutableSizes = [NSMutableArray new];
+        NSMutableArray *sizeSettings = [NSMutableArray new];
+
         for (NSDictionary *size in appDict[@"sizes"]) {
-          [mutableSizes addObject:[NSMutableDictionary dictionaryWithDictionary:size]];
+          SizeSetting *sizeSetting = [SizeSetting new];
+          sizeSetting.coordinates = [NSMutableDictionary dictionaryWithDictionary:size];
+          [sizeSettings addObject:sizeSetting];
         }
 
-        mutableAppDict[@"sizes"] = mutableSizes;
-        [mutableApps addObject:mutableAppDict];
+        AppSetting *appSetting = [AppSetting new];
+        appSetting.name = appDict[@"name"];
+        appSetting.sizeSettings = sizeSettings;
+        [appSettings addObject:appSetting];
       }
 
-      displayDictionaryWithApps[@"apps"] = mutableApps;
-    } else {
-      displayDictionaryWithApps[@"apps"] = [NSMutableArray new];
-    }
-
-    [merged addObject:displayDictionaryWithApps];
+    DisplaySetting *displaySetting = [DisplaySetting new];
+    displaySetting.appSettings = appSettings;
+    displaySetting.name = displayInfo[@"name"];
+    [displaySettings addObject:displaySetting];
   }
 
-  return merged;
+  BoxMoverSettings *settings = [BoxMoverSettings new];
+  settings.displaySettings = displaySettings;
+  return settings;
 }
 
 @end

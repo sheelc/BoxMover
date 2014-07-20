@@ -21,6 +21,10 @@
 		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
 		5034E708197B86240075A2BB /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E707197B86240075A2BB /* PreferencesController.xib */; };
+		50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83401197C63F100183018 /* BoxMoverSettings.m */; };
+		50B83406197C641600183018 /* DisplaySetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83405197C641600183018 /* DisplaySetting.m */; };
+		50B83409197C643000183018 /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83408197C643000183018 /* AppSetting.m */; };
+		50B8340C197C644000183018 /* SizeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B8340B197C644000183018 /* SizeSetting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,14 @@
 		5034E6E4197B6F870075A2BB /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		5034E6F2197B7F130075A2BB /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		5034E707197B86240075A2BB /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		50B83400197C63F100183018 /* BoxMoverSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxMoverSettings.h; path = BoxMover/BoxMoverSettings.h; sourceTree = SOURCE_ROOT; };
+		50B83401197C63F100183018 /* BoxMoverSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxMoverSettings.m; path = BoxMover/BoxMoverSettings.m; sourceTree = SOURCE_ROOT; };
+		50B83404197C641600183018 /* DisplaySetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaySetting.h; sourceTree = "<group>"; };
+		50B83405197C641600183018 /* DisplaySetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplaySetting.m; sourceTree = "<group>"; };
+		50B83407197C643000183018 /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
+		50B83408197C643000183018 /* AppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSetting.m; sourceTree = "<group>"; };
+		50B8340A197C644000183018 /* SizeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeSetting.h; sourceTree = "<group>"; };
+		50B8340B197C644000183018 /* SizeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeSetting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,16 +162,24 @@
 		5034E6A2197B32740075A2BB /* BoxMover */ = {
 			isa = PBXGroup;
 			children = (
+				50B8340A197C644000183018 /* SizeSetting.h */,
+				50B8340B197C644000183018 /* SizeSetting.m */,
+				50B83407197C643000183018 /* AppSetting.h */,
+				50B83408197C643000183018 /* AppSetting.m */,
 				5034E6AE197B32740075A2BB /* AppDelegate.h */,
 				5034E6AF197B32740075A2BB /* AppDelegate.m */,
-				5034E6B1197B32740075A2BB /* MainMenu.xib */,
+				50B83400197C63F100183018 /* BoxMoverSettings.h */,
+				50B83401197C63F100183018 /* BoxMoverSettings.m */,
 				5034E6B4197B32740075A2BB /* Images.xcassets */,
-				5034E6A3197B32740075A2BB /* Supporting Files */,
-				5034E6D2197B357F0075A2BB /* StatusItemController.h */,
-				5034E6D3197B357F0075A2BB /* StatusItemController.m */,
+				5034E6B1197B32740075A2BB /* MainMenu.xib */,
 				5034E6E3197B6F870075A2BB /* PreferencesController.h */,
 				5034E6E4197B6F870075A2BB /* PreferencesController.m */,
 				5034E707197B86240075A2BB /* PreferencesController.xib */,
+				5034E6D2197B357F0075A2BB /* StatusItemController.h */,
+				50B83404197C641600183018 /* DisplaySetting.h */,
+				50B83405197C641600183018 /* DisplaySetting.m */,
+				5034E6D3197B357F0075A2BB /* StatusItemController.m */,
+				5034E6A3197B32740075A2BB /* Supporting Files */,
 			);
 			path = BoxMover;
 			sourceTree = "<group>";
@@ -295,7 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5034E6E6197B6F870075A2BB /* PreferencesController.m in Sources */,
+				50B8340C197C644000183018 /* SizeSetting.m in Sources */,
+				50B83406197C641600183018 /* DisplaySetting.m in Sources */,
+				50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */,
 				5034E6D4197B357F0075A2BB /* StatusItemController.m in Sources */,
+				50B83409197C643000183018 /* AppSetting.m in Sources */,
 				5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */,
 				5034E6A9197B32740075A2BB /* main.m in Sources */,
 			);

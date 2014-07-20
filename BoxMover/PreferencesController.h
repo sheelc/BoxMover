@@ -10,8 +10,6 @@
 
 @interface PreferencesController : NSWindowController
 
-@property (strong, nonatomic) NSMutableArray *displays;
-
 - (id)initWithDisplays:(NSMutableArray *)displays;
 
 @end
