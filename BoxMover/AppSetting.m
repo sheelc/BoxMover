@@ -20,11 +20,4 @@
   return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  AppSetting *appSetting = [AppSetting new];
-  appSetting.name = [self.name copyWithZone:zone];
-  appSetting.sizeSettings = [self.sizeSettings copyWithZone:zone];
-  return appSetting;
-}
-
 @end

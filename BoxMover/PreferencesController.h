@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BoxMoverSettings.h"
 
 @interface PreferencesController : NSWindowController
 
-- (id)initWithDisplays:(NSMutableArray *)displays;
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings;
 @property (weak) IBOutlet NSTableView *shortcutTable;
 @property (weak) IBOutlet NSTableView *displaysTable;
 @property (weak) IBOutlet NSTableView *appsTable;

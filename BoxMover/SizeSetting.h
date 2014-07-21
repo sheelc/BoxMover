@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SizeSetting : NSObject<NSCopying>
+@interface SizeSetting : NSObject
 
 @property (strong, nonatomic) NSMutableDictionary *coordinates;
 @property (assign, nonatomic) BOOL editable;

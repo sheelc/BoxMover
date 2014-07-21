@@ -21,16 +21,4 @@
   return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  SizeSetting *sizeSetting = [SizeSetting new];
-  sizeSetting.coordinates = [self.coordinates copyWithZone:zone];
-  sizeSetting.editable = self.editable;
-  sizeSetting.srKeyCombo = [self.srKeyCombo copyWithZone:zone];
-  return sizeSetting;
-}
-
-- (NSUInteger)count {
-  return 0;
-}
-
 @end

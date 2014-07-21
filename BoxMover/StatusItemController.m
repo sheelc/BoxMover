@@ -13,17 +13,17 @@
 
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) PreferencesController *preferencesController;
-@property (strong, nonatomic) NSMutableArray *displays;
+@property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
 
 @end
 
 @implementation StatusItemController
 
-- (id)initWithDisplays:(NSMutableArray *)displays {
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings {
   self = [super init];
   if (self) {
     self.statusItem = [self createStatusItem];
-    self.displays = displays;
+    self.boxMoverSettings = settings;
   }
 
   return self;
@@ -57,7 +57,7 @@
 
 - (void)openPreferences:(id)sender {
   if(!self.preferencesController) {
-    self.preferencesController = [[PreferencesController alloc] initWithDisplays:self.displays];
+    self.preferencesController = [[PreferencesController alloc] initWithBoxMoverSettings:self.boxMoverSettings];
     [[self.preferencesController window] setLevel: NSPopUpMenuWindowLevel];
     [self.preferencesController showWindow:self];
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification

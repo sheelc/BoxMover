@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BoxMoverSettings.h"
 
 @interface StatusItemController : NSObject
 
-- (id)initWithDisplays:(NSMutableArray *)displays;
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings;
 
 @end
