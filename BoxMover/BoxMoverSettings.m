@@ -10,4 +10,23 @@
 
 @implementation BoxMoverSettings
 
+- (id)init {
+  self = [super init];
+  if (self) {
+    self.displaySettings = [NSMutableArray new];
+  }
+
+  return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  self.displaySettings = [aDecoder decodeObjectForKey:@"displaySettings"];
+
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+  [aCoder encodeObject:self.displaySettings forKey:@"displaySettings"];
+}
+
 @end

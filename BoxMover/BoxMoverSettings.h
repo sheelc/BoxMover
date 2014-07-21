@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BoxMoverSettings : NSObject
+@interface BoxMoverSettings : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSMutableArray *displaySettings;
 

@@ -21,4 +21,21 @@
   return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  self = [super init];
+  if (self) {
+    self.coordinates = [aDecoder decodeObjectForKey:@"coordinates"];
+    self.editable = [aDecoder decodeBoolForKey:@"editable"];
+    self.srKeyCombo = [aDecoder decodeObjectForKey:@"srKeyCombo"];
+  }
+
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+  [aCoder encodeObject:self.coordinates forKey:@"coordinates"];
+  [aCoder encodeBool:self.editable forKey:@"editable"];
+  [aCoder encodeObject:self.srKeyCombo forKey:@"srKeyCombo"];
+}
+
 @end

@@ -20,4 +20,19 @@
   return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  self = [super init];
+  if (self) {
+    self.sizeSettings = [aDecoder decodeObjectForKey:@"sizeSettings"];
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+  }
+
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+  [aCoder encodeObject:self.sizeSettings forKey:@"sizeSettings"];
+  [aCoder encodeObject:self.name forKey:@"name"];
+}
+
 @end

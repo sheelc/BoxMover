@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DisplaySetting : NSObject
+@interface DisplaySetting : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSString *name;
+@property (assign, nonatomic) NSInteger productId;
 @property (strong, nonatomic) NSMutableArray *appSettings;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AppSetting : NSObject
+@interface AppSetting : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *sizeSettings;

@@ -17,16 +17,23 @@
 @interface AppDelegate ()
 
 @property (strong, nonatomic) StatusItemController *statusItemController;
+@property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
 
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:[self createBoxMoverSettings]];
+  self.boxMoverSettings = [self createBoxMoverSettings];
+  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:self.boxMoverSettings];
 }
 
-- (NSMutableArray *)displays {
+- (void)applicationWillTerminate:(NSNotification *)notification {
+  [self saveBoxMoverSettings];
+}
+
+
+- (NSArray *)displays {
   NSMutableArray *displayInfos = [NSMutableArray new];
   for (NSScreen *screen in [NSScreen screens]) {
     CGDirectDisplayID displayID = (CGDirectDisplayID)[[screen deviceDescription][@"NSScreenNumber"] integerValue];
@@ -34,52 +41,43 @@
     NSString *productIDKey = [NSString stringWithCString:kDisplayProductID encoding:NSUTF8StringEncoding];
     NSString *nameKey = [NSString stringWithCString:kDisplayProductName encoding:NSUTF8StringEncoding];
 
-    [displayInfos addObject:@{@"productID":displayInfo[productIDKey], @"name":displayInfo[nameKey][@"id"]}];
+    [displayInfos addObject:@{@"productId":displayInfo[productIDKey], @"name":displayInfo[nameKey][@"id"]}];
   }
 
     return displayInfos;
 }
 
-- (NSDictionary *)plist {
-  return @{@61509: @[
-               @{@"name": @"Google Chrome", @"sizes": @[@{@"x": @10, @"y": @44, @"w":@34, @"h":@49},
-                                                        @{@"x": @11, @"y": @44, @"w":@34, @"h":@50}]},
-               @{@"name":@"Firefox", @"sizes": @[]}
-               ],
-           };
+- (void)saveBoxMoverSettings {
+  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.boxMoverSettings];
+  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"boxMoverSettings"];
 }
 
 - (BoxMoverSettings *)createBoxMoverSettings {
-  NSMutableArray *displaySettings = [NSMutableArray new];
-  for (NSDictionary *displayInfo in [self displays]) {
-    NSArray *apps = [self plist][displayInfo[@"productID"]];
-    NSMutableArray *appSettings = [NSMutableArray new];
-
-    for (NSDictionary *appDict in apps) {
-      NSMutableArray *sizeSettings = [NSMutableArray new];
-
-      for (NSDictionary *size in appDict[@"sizes"]) {
-        SizeSetting *sizeSetting = [SizeSetting new];
-        sizeSetting.coordinates = [NSMutableDictionary dictionaryWithDictionary:size];
-        [sizeSettings addObject:sizeSetting];
-      }
-
-      AppSetting *appSetting = [AppSetting new];
-      appSetting.name = appDict[@"name"];
-      appSetting.sizeSettings = sizeSettings;
-      [appSettings addObject:appSetting];
-    }
-
-    DisplaySetting *displaySetting = [DisplaySetting new];
-    displaySetting.appSettings = appSettings;
-    displaySetting.name = displayInfo[@"name"];
-    [displaySettings addObject:displaySetting];
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"boxMoverSettings"];
+  BoxMoverSettings *boxMoverSettings;
+  if (data) {
+    boxMoverSettings = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+  } else {
+    boxMoverSettings = [BoxMoverSettings new];
   }
 
-  BoxMoverSettings *settings = [BoxMoverSettings new];
-  settings.displaySettings = displaySettings;
-  return settings;
-}
+  for (NSDictionary *displayDict in [self displays]) {
+    BOOL foundDisplay = NO;
+    for (DisplaySetting *dispSetting in boxMoverSettings.displaySettings) {
+      if (dispSetting.productId == [displayDict[@"productId"] integerValue]) {
+        foundDisplay = YES;
+      }
+    }
 
+    if (!foundDisplay) {
+      DisplaySetting *additionalDisplay = [DisplaySetting new];
+      additionalDisplay.name = displayDict[@"name"];
+      additionalDisplay.productId = [displayDict[@"productId"] integerValue];
+      [boxMoverSettings.displaySettings addObject:additionalDisplay];
+    }
+  }
+
+  return boxMoverSettings;
+}
 
 @end
