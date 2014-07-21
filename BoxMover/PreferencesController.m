@@ -11,8 +11,11 @@
 #import "DisplaySetting.h"
 #import "AppSetting.h"
 #import "SizeSetting.h"
+#import "SRRecorderControl.h"
+#import "SRKeyEquivalentTransformer.h"
+#import "CustomRecorderControl.h"
 
-@interface PreferencesController ()
+@interface PreferencesController ()<NSTableViewDelegate>
 
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
 
@@ -67,6 +70,22 @@
   BoxMoverSettings *settings = [BoxMoverSettings new];
   settings.displaySettings = displaySettings;
   return settings;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+  NSView *view = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+
+  if ([tableColumn.identifier isEqualToString:@"ShortcutIdentifier"]) {
+    [(SRRecorderControl *)view bind:NSValueBinding toObject:[self sizeSettingForRow:row] withKeyPath:@"srKeyCombo" options:nil];
+  }
+
+  return view;
+}
+
+- (SizeSetting *)sizeSettingForRow:(NSInteger)row {
+  DisplaySetting *displaySetting = self.boxMoverSettings.displaySettings[self.displaysTable.selectedRow];
+  AppSetting *appSetting = displaySetting.appSettings[self.appsTable.selectedRow];
+  return appSetting.sizeSettings[row];
 }
 
 @end

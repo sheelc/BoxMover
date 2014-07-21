@@ -11,5 +11,8 @@
 @interface PreferencesController : NSWindowController
 
 - (id)initWithDisplays:(NSMutableArray *)displays;
+@property (weak) IBOutlet NSTableView *shortcutTable;
+@property (weak) IBOutlet NSTableView *displaysTable;
+@property (weak) IBOutlet NSTableView *appsTable;
 
 @end

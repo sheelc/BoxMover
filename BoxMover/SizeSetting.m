@@ -14,6 +14,8 @@
   self = [super init];
   if (self) {
     self.coordinates = [NSMutableDictionary dictionaryWithDictionary:@{@"x": @0, @"y": @0, @"w": @0, @"h": @0}];
+    self.editable = YES;
+    self.srKeyCombo = [NSDictionary new];
   }
 
   return self;
@@ -22,6 +24,8 @@
 - (id)copyWithZone:(NSZone *)zone {
   SizeSetting *sizeSetting = [SizeSetting new];
   sizeSetting.coordinates = [self.coordinates copyWithZone:zone];
+  sizeSetting.editable = self.editable;
+  sizeSetting.srKeyCombo = [self.srKeyCombo copyWithZone:zone];
   return sizeSetting;
 }
 

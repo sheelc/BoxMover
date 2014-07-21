@@ -11,5 +11,7 @@
 @interface SizeSetting : NSObject<NSCopying>
 
 @property (strong, nonatomic) NSMutableDictionary *coordinates;
+@property (assign, nonatomic) BOOL editable;
+@property (strong, nonatomic) NSDictionary *srKeyCombo;
 
 @end

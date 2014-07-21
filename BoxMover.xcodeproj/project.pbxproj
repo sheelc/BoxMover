@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */; };
 		5034E69D197B32740075A2BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E69C197B32740075A2BB /* Cocoa.framework */; };
 		5034E6A7197B32740075A2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6A5197B32740075A2BB /* InfoPlist.strings */; };
 		5034E6A9197B32740075A2BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6A8197B32740075A2BB /* main.m */; };
@@ -80,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRecorderControl.h; sourceTree = "<group>"; };
+		5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRecorderControl.m; sourceTree = "<group>"; };
 		5034E699197B32740075A2BB /* BoxMover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxMover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5034E69C197B32740075A2BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5034E69F197B32740075A2BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +165,8 @@
 		5034E6A2197B32740075A2BB /* BoxMover */ = {
 			isa = PBXGroup;
 			children = (
+				5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */,
+				5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */,
 				50B8340A197C644000183018 /* SizeSetting.h */,
 				50B8340B197C644000183018 /* SizeSetting.m */,
 				50B83407197C643000183018 /* AppSetting.h */,
@@ -322,6 +327,7 @@
 				50B83409197C643000183018 /* AppSetting.m in Sources */,
 				5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */,
 				5034E6A9197B32740075A2BB /* main.m in Sources */,
+				5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +406,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"External/**",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,6 +445,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"External/**",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
