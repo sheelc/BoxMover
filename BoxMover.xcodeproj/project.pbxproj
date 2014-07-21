@@ -23,6 +23,7 @@
 		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
 		5034E708197B86240075A2BB /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E707197B86240075A2BB /* PreferencesController.xib */; };
+		50570016197CD759001C0AA0 /* BoxMover.m in Sources */ = {isa = PBXBuildFile; fileRef = 50570015197CD759001C0AA0 /* BoxMover.m */; };
 		50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83401197C63F100183018 /* BoxMoverSettings.m */; };
 		50B83406197C641600183018 /* DisplaySetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83405197C641600183018 /* DisplaySetting.m */; };
 		50B83409197C643000183018 /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83408197C643000183018 /* AppSetting.m */; };
@@ -105,6 +106,8 @@
 		5034E6E4197B6F870075A2BB /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		5034E6F2197B7F130075A2BB /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		5034E707197B86240075A2BB /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		50570014197CD759001C0AA0 /* BoxMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMover.h; sourceTree = "<group>"; };
+		50570015197CD759001C0AA0 /* BoxMover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMover.m; sourceTree = "<group>"; };
 		50B83400197C63F100183018 /* BoxMoverSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxMoverSettings.h; path = BoxMover/BoxMoverSettings.h; sourceTree = SOURCE_ROOT; };
 		50B83401197C63F100183018 /* BoxMoverSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxMoverSettings.m; path = BoxMover/BoxMoverSettings.m; sourceTree = SOURCE_ROOT; };
 		50B83404197C641600183018 /* DisplaySetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaySetting.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				5034E6AF197B32740075A2BB /* AppDelegate.m */,
 				50B83407197C643000183018 /* AppSetting.h */,
 				50B83408197C643000183018 /* AppSetting.m */,
+				50570014197CD759001C0AA0 /* BoxMover.h */,
+				50570015197CD759001C0AA0 /* BoxMover.m */,
 				50B83400197C63F100183018 /* BoxMoverSettings.h */,
 				50B83401197C63F100183018 /* BoxMoverSettings.m */,
 				5007E700197CB79A00FC7F5E /* BoxSettingsManager.h */,
@@ -324,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50570016197CD759001C0AA0 /* BoxMover.m in Sources */,
 				5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */,
 				5034E6E6197B6F870075A2BB /* PreferencesController.m in Sources */,
 				50B8340C197C644000183018 /* SizeSetting.m in Sources */,

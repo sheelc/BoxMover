@@ -7,6 +7,9 @@
 //
 
 #import "BoxMoverSettings.h"
+#import "DisplaySetting.h"
+#import "AppSetting.h"
+#import "SizeSetting.h"
 
 @implementation BoxMoverSettings
 
@@ -17,6 +20,19 @@
   }
 
   return self;
+}
+
+- (NSArray *)allHotKeyDictionaries {
+  NSMutableSet *hotKeys = [NSMutableSet new];
+  for (DisplaySetting *dispSetting in self.displaySettings) {
+    for (AppSetting *appSetting in dispSetting.appSettings) {
+      for (SizeSetting *sizeSetting in appSetting.sizeSettings) {
+        [hotKeys addObject:sizeSetting.srKeyCombo];
+      }
+    }
+  }
+
+  return [hotKeys allObjects];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
