@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */; };
-		5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */; };
-		5019F0DB197E13B6007B39D3 /* DisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DA197E13B6007B39D3 /* DisplayManager.m */; };
-		5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DE197E163F007B39D3 /* DisplayInfo.m */; };
-		5019F0E2197E40D0007B39D3 /* DefaultAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */; };
+		5019F0EC197E469A007B39D3 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0E8197E469A007B39D3 /* PreferencesController.m */; };
+		5019F0ED197E469A007B39D3 /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5019F0E9197E469A007B39D3 /* PreferencesController.xib */; };
+		5019F0EE197E469A007B39D3 /* StatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0EB197E469A007B39D3 /* StatusItemController.m */; };
+		5019F0F5197E46A5007B39D3 /* BoxMover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0F0197E46A5007B39D3 /* BoxMover.m */; };
+		5019F0F6197E46A5007B39D3 /* BoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0F2197E46A5007B39D3 /* BoxSettingsManager.m */; };
+		5019F0F7197E46A5007B39D3 /* DisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0F4197E46A5007B39D3 /* DisplayManager.m */; };
+		5019F104197E46B0007B39D3 /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0F9197E46B0007B39D3 /* AppSetting.m */; };
+		5019F105197E46B0007B39D3 /* BoxMoverSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0FB197E46B0007B39D3 /* BoxMoverSettings.m */; };
+		5019F106197E46B0007B39D3 /* DefaultAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0FD197E46B0007B39D3 /* DefaultAppSetting.m */; };
+		5019F107197E46B0007B39D3 /* DisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0FF197E46B0007B39D3 /* DisplayInfo.m */; };
+		5019F108197E46B0007B39D3 /* DisplaySetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F101197E46B0007B39D3 /* DisplaySetting.m */; };
+		5019F109197E46B0007B39D3 /* SizeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F103197E46B0007B39D3 /* SizeSetting.m */; };
+		5019F10C197E46C2007B39D3 /* CustomRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F10B197E46C2007B39D3 /* CustomRecorderControl.m */; };
 		5034E69D197B32740075A2BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E69C197B32740075A2BB /* Cocoa.framework */; };
 		5034E6A7197B32740075A2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6A5197B32740075A2BB /* InfoPlist.strings */; };
 		5034E6A9197B32740075A2BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6A8197B32740075A2BB /* main.m */; };
@@ -19,18 +27,10 @@
 		5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6AF197B32740075A2BB /* AppDelegate.m */; };
 		5034E6B3197B32740075A2BB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6B1197B32740075A2BB /* MainMenu.xib */; };
 		5034E6B5197B32740075A2BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6B4197B32740075A2BB /* Images.xcassets */; };
-		5034E6D4197B357F0075A2BB /* StatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6D3197B357F0075A2BB /* StatusItemController.m */; };
-		5034E6E6197B6F870075A2BB /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6E4197B6F870075A2BB /* PreferencesController.m */; };
 		5034E6FE197B7F370075A2BB /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
 		5034E6FF197B7F370075A2BB /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
-		5034E708197B86240075A2BB /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E707197B86240075A2BB /* PreferencesController.xib */; };
-		50570016197CD759001C0AA0 /* BoxMover.m in Sources */ = {isa = PBXBuildFile; fileRef = 50570015197CD759001C0AA0 /* BoxMover.m */; };
-		50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83401197C63F100183018 /* BoxMoverSettings.m */; };
-		50B83406197C641600183018 /* DisplaySetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83405197C641600183018 /* DisplaySetting.m */; };
-		50B83409197C643000183018 /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B83408197C643000183018 /* AppSetting.m */; };
-		50B8340C197C644000183018 /* SizeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B8340B197C644000183018 /* SizeSetting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,16 +86,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRecorderControl.h; sourceTree = "<group>"; };
-		5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRecorderControl.m; sourceTree = "<group>"; };
-		5007E700197CB79A00FC7F5E /* BoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxSettingsManager.h; sourceTree = "<group>"; };
-		5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxSettingsManager.m; sourceTree = "<group>"; };
-		5019F0D9197E13B6007B39D3 /* DisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayManager.h; sourceTree = "<group>"; };
-		5019F0DA197E13B6007B39D3 /* DisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayManager.m; sourceTree = "<group>"; };
-		5019F0DD197E163F007B39D3 /* DisplayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayInfo.h; sourceTree = "<group>"; };
-		5019F0DE197E163F007B39D3 /* DisplayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayInfo.m; sourceTree = "<group>"; };
-		5019F0E0197E40D0007B39D3 /* DefaultAppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAppSetting.h; sourceTree = "<group>"; };
-		5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAppSetting.m; sourceTree = "<group>"; };
+		5019F0E7197E469A007B39D3 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		5019F0E8197E469A007B39D3 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		5019F0E9197E469A007B39D3 /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		5019F0EA197E469A007B39D3 /* StatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemController.h; sourceTree = "<group>"; };
+		5019F0EB197E469A007B39D3 /* StatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemController.m; sourceTree = "<group>"; };
+		5019F0EF197E46A5007B39D3 /* BoxMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMover.h; sourceTree = "<group>"; };
+		5019F0F0197E46A5007B39D3 /* BoxMover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMover.m; sourceTree = "<group>"; };
+		5019F0F1197E46A5007B39D3 /* BoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxSettingsManager.h; sourceTree = "<group>"; };
+		5019F0F2197E46A5007B39D3 /* BoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxSettingsManager.m; sourceTree = "<group>"; };
+		5019F0F3197E46A5007B39D3 /* DisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayManager.h; sourceTree = "<group>"; };
+		5019F0F4197E46A5007B39D3 /* DisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayManager.m; sourceTree = "<group>"; };
+		5019F0F8197E46B0007B39D3 /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
+		5019F0F9197E46B0007B39D3 /* AppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSetting.m; sourceTree = "<group>"; };
+		5019F0FA197E46B0007B39D3 /* BoxMoverSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMoverSettings.h; sourceTree = "<group>"; };
+		5019F0FB197E46B0007B39D3 /* BoxMoverSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMoverSettings.m; sourceTree = "<group>"; };
+		5019F0FC197E46B0007B39D3 /* DefaultAppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAppSetting.h; sourceTree = "<group>"; };
+		5019F0FD197E46B0007B39D3 /* DefaultAppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAppSetting.m; sourceTree = "<group>"; };
+		5019F0FE197E46B0007B39D3 /* DisplayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayInfo.h; sourceTree = "<group>"; };
+		5019F0FF197E46B0007B39D3 /* DisplayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayInfo.m; sourceTree = "<group>"; };
+		5019F100197E46B0007B39D3 /* DisplaySetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaySetting.h; sourceTree = "<group>"; };
+		5019F101197E46B0007B39D3 /* DisplaySetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplaySetting.m; sourceTree = "<group>"; };
+		5019F102197E46B0007B39D3 /* SizeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeSetting.h; sourceTree = "<group>"; };
+		5019F103197E46B0007B39D3 /* SizeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeSetting.m; sourceTree = "<group>"; };
+		5019F10A197E46C2007B39D3 /* CustomRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRecorderControl.h; sourceTree = "<group>"; };
+		5019F10B197E46C2007B39D3 /* CustomRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRecorderControl.m; sourceTree = "<group>"; };
 		5034E699197B32740075A2BB /* BoxMover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxMover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5034E69C197B32740075A2BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5034E69F197B32740075A2BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -109,22 +124,7 @@
 		5034E6AF197B32740075A2BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5034E6B2197B32740075A2BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5034E6B4197B32740075A2BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5034E6D2197B357F0075A2BB /* StatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemController.h; sourceTree = "<group>"; };
-		5034E6D3197B357F0075A2BB /* StatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemController.m; sourceTree = "<group>"; };
-		5034E6E3197B6F870075A2BB /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		5034E6E4197B6F870075A2BB /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		5034E6F2197B7F130075A2BB /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
-		5034E707197B86240075A2BB /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
-		50570014197CD759001C0AA0 /* BoxMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMover.h; sourceTree = "<group>"; };
-		50570015197CD759001C0AA0 /* BoxMover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMover.m; sourceTree = "<group>"; };
-		50B83400197C63F100183018 /* BoxMoverSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxMoverSettings.h; path = BoxMover/BoxMoverSettings.h; sourceTree = SOURCE_ROOT; };
-		50B83401197C63F100183018 /* BoxMoverSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxMoverSettings.m; path = BoxMover/BoxMoverSettings.m; sourceTree = SOURCE_ROOT; };
-		50B83404197C641600183018 /* DisplaySetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaySetting.h; sourceTree = "<group>"; };
-		50B83405197C641600183018 /* DisplaySetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplaySetting.m; sourceTree = "<group>"; };
-		50B83407197C643000183018 /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
-		50B83408197C643000183018 /* AppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSetting.m; sourceTree = "<group>"; };
-		50B8340A197C644000183018 /* SizeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeSetting.h; sourceTree = "<group>"; };
-		50B8340B197C644000183018 /* SizeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeSetting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +141,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5019F0E3197E4480007B39D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5019F10A197E46C2007B39D3 /* CustomRecorderControl.h */,
+				5019F10B197E46C2007B39D3 /* CustomRecorderControl.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5019F0E4197E449D007B39D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5019F0E7197E469A007B39D3 /* PreferencesController.h */,
+				5019F0E8197E469A007B39D3 /* PreferencesController.m */,
+				5019F0E9197E469A007B39D3 /* PreferencesController.xib */,
+				5019F0EA197E469A007B39D3 /* StatusItemController.h */,
+				5019F0EB197E469A007B39D3 /* StatusItemController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5019F0E5197E44C6007B39D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5019F0F8197E46B0007B39D3 /* AppSetting.h */,
+				5019F0F9197E46B0007B39D3 /* AppSetting.m */,
+				5019F0FA197E46B0007B39D3 /* BoxMoverSettings.h */,
+				5019F0FB197E46B0007B39D3 /* BoxMoverSettings.m */,
+				5019F0FC197E46B0007B39D3 /* DefaultAppSetting.h */,
+				5019F0FD197E46B0007B39D3 /* DefaultAppSetting.m */,
+				5019F0FE197E46B0007B39D3 /* DisplayInfo.h */,
+				5019F0FF197E46B0007B39D3 /* DisplayInfo.m */,
+				5019F100197E46B0007B39D3 /* DisplaySetting.h */,
+				5019F101197E46B0007B39D3 /* DisplaySetting.m */,
+				5019F102197E46B0007B39D3 /* SizeSetting.h */,
+				5019F103197E46B0007B39D3 /* SizeSetting.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5019F0E6197E4506007B39D3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5019F0EF197E46A5007B39D3 /* BoxMover.h */,
+				5019F0F0197E46A5007B39D3 /* BoxMover.m */,
+				5019F0F1197E46A5007B39D3 /* BoxSettingsManager.h */,
+				5019F0F2197E46A5007B39D3 /* BoxSettingsManager.m */,
+				5019F0F3197E46A5007B39D3 /* DisplayManager.h */,
+				5019F0F4197E46A5007B39D3 /* DisplayManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5034E690197B32740075A2BB = {
 			isa = PBXGroup;
 			children = (
@@ -182,34 +235,13 @@
 			children = (
 				5034E6AE197B32740075A2BB /* AppDelegate.h */,
 				5034E6AF197B32740075A2BB /* AppDelegate.m */,
-				50B83407197C643000183018 /* AppSetting.h */,
-				50B83408197C643000183018 /* AppSetting.m */,
-				50570014197CD759001C0AA0 /* BoxMover.h */,
-				50570015197CD759001C0AA0 /* BoxMover.m */,
-				50B83400197C63F100183018 /* BoxMoverSettings.h */,
-				50B83401197C63F100183018 /* BoxMoverSettings.m */,
-				5007E700197CB79A00FC7F5E /* BoxSettingsManager.h */,
-				5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */,
-				5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */,
-				5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */,
-				5019F0E0197E40D0007B39D3 /* DefaultAppSetting.h */,
-				5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */,
-				5019F0DD197E163F007B39D3 /* DisplayInfo.h */,
-				5019F0DE197E163F007B39D3 /* DisplayInfo.m */,
-				5019F0D9197E13B6007B39D3 /* DisplayManager.h */,
-				5019F0DA197E13B6007B39D3 /* DisplayManager.m */,
-				50B83404197C641600183018 /* DisplaySetting.h */,
-				50B83405197C641600183018 /* DisplaySetting.m */,
+				5019F0E4197E449D007B39D3 /* Controllers */,
 				5034E6B4197B32740075A2BB /* Images.xcassets */,
 				5034E6B1197B32740075A2BB /* MainMenu.xib */,
-				5034E6E3197B6F870075A2BB /* PreferencesController.h */,
-				5034E6E4197B6F870075A2BB /* PreferencesController.m */,
-				5034E707197B86240075A2BB /* PreferencesController.xib */,
-				50B8340A197C644000183018 /* SizeSetting.h */,
-				50B8340B197C644000183018 /* SizeSetting.m */,
-				5034E6D2197B357F0075A2BB /* StatusItemController.h */,
-				5034E6D3197B357F0075A2BB /* StatusItemController.m */,
+				5019F0E6197E4506007B39D3 /* Managers */,
+				5019F0E5197E44C6007B39D3 /* Models */,
 				5034E6A3197B32740075A2BB /* Supporting Files */,
+				5019F0E3197E4480007B39D3 /* Views */,
 			);
 			path = BoxMover;
 			sourceTree = "<group>";
@@ -218,10 +250,10 @@
 			isa = PBXGroup;
 			children = (
 				5034E6A4197B32740075A2BB /* BoxMover-Info.plist */,
-				5034E6A5197B32740075A2BB /* InfoPlist.strings */,
-				5034E6A8197B32740075A2BB /* main.m */,
 				5034E6AA197B32740075A2BB /* BoxMover-Prefix.pch */,
 				5034E6AB197B32740075A2BB /* Credits.rtf */,
+				5034E6A5197B32740075A2BB /* InfoPlist.strings */,
+				5034E6A8197B32740075A2BB /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -329,8 +361,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5019F0ED197E469A007B39D3 /* PreferencesController.xib in Resources */,
 				5034E6A7197B32740075A2BB /* InfoPlist.strings in Resources */,
-				5034E708197B86240075A2BB /* PreferencesController.xib in Resources */,
 				5034E6B5197B32740075A2BB /* Images.xcassets in Resources */,
 				5034E6AD197B32740075A2BB /* Credits.rtf in Resources */,
 				5034E6B3197B32740075A2BB /* MainMenu.xib in Resources */,
@@ -344,20 +376,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50570016197CD759001C0AA0 /* BoxMover.m in Sources */,
-				5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */,
-				5034E6E6197B6F870075A2BB /* PreferencesController.m in Sources */,
-				50B8340C197C644000183018 /* SizeSetting.m in Sources */,
-				5019F0DB197E13B6007B39D3 /* DisplayManager.m in Sources */,
-				50B83406197C641600183018 /* DisplaySetting.m in Sources */,
-				50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */,
-				5034E6D4197B357F0075A2BB /* StatusItemController.m in Sources */,
-				50B83409197C643000183018 /* AppSetting.m in Sources */,
+				5019F108197E46B0007B39D3 /* DisplaySetting.m in Sources */,
+				5019F106197E46B0007B39D3 /* DefaultAppSetting.m in Sources */,
+				5019F0EC197E469A007B39D3 /* PreferencesController.m in Sources */,
+				5019F0EE197E469A007B39D3 /* StatusItemController.m in Sources */,
+				5019F10C197E46C2007B39D3 /* CustomRecorderControl.m in Sources */,
+				5019F0F7197E46A5007B39D3 /* DisplayManager.m in Sources */,
+				5019F104197E46B0007B39D3 /* AppSetting.m in Sources */,
+				5019F0F5197E46A5007B39D3 /* BoxMover.m in Sources */,
+				5019F0F6197E46A5007B39D3 /* BoxSettingsManager.m in Sources */,
+				5019F105197E46B0007B39D3 /* BoxMoverSettings.m in Sources */,
+				5019F109197E46B0007B39D3 /* SizeSetting.m in Sources */,
 				5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */,
 				5034E6A9197B32740075A2BB /* main.m in Sources */,
-				5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */,
-				5019F0E2197E40D0007B39D3 /* DefaultAppSetting.m in Sources */,
-				5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */,
+				5019F107197E46B0007B39D3 /* DisplayInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
