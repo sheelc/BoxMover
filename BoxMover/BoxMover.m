@@ -37,14 +37,14 @@
     PTHotKey *hotKey = [PTHotKey hotKeyWithIdentifier:@"identifier"
                                              keyCombo:keyCombo
                                                target:self
-                                               action:@selector(hotKeyCalled)
+                                               action:@selector(hotKeyCalled:)
                                            withObject:keyCombo];
 
     [hkCenter registerHotKey:hotKey];
   }
 }
 
-- (void)hotKeyCalled {
+- (void)hotKeyCalled:(NSDictionary *)keyCombo {
   CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly|kCGWindowListExcludeDesktopElements, kCGNullWindowID);
 
   CFDictionaryRef topMostWindow = nil;
@@ -78,9 +78,34 @@
 
   NSLog(@"================> %@", axWindow);
 
-  CGPoint point = {100.0, 100.0};
-  CFTypeRef position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&point));
-  AXUIElementSetAttributeValue(axWindow, kAXPositionAttribute, (CFTypeRef)position);
+
+  CGPoint origPoint;
+  CFTypeRef origin = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &origPoint));
+  AXUIElementCopyAttributeValue(axWindow, kAXPositionAttribute, &origin);
+
+  CGSize origSize;
+  CFTypeRef origBoxSize = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, &origSize));
+  AXUIElementCopyAttributeValue(axWindow, kAXSizeAttribute, &origBoxSize);
+
+  CGRect origRect = {
+    .origin = origPoint,
+    .size = origSize
+  };
+
+
+
+  NSString *appName = CFDictionaryGetValue(topMostWindow, kCGWindowOwnerName);
+  CGRect newRect = [self.boxMoverSettings rectForKeyCombo:keyCombo app:appName displayId:0];
+
+  if (!CGRectEqualToRect(newRect, CGRectZero)) {
+    CGPoint point = newRect.origin;
+    CFTypeRef position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &point));
+    AXUIElementSetAttributeValue(axWindow, kAXPositionAttribute, position);
+
+    CGSize size = newRect.size;
+    CFTypeRef boxSize = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, &size));
+    AXUIElementSetAttributeValue(axWindow, kAXSizeAttribute, boxSize);
+  }
 }
 
 @end

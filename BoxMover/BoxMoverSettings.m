@@ -35,6 +35,10 @@
   return [hotKeys allObjects];
 }
 
+- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayId:(NSInteger)displayId {
+  return CGRectMake(100.0, 100.0, 1000.0, 800.0);
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
   self.displaySettings = [aDecoder decodeObjectForKey:@"displaySettings"];
 

@@ -13,5 +13,6 @@
 @property (strong, nonatomic) NSMutableArray *displaySettings;
 
 - (NSArray *)allHotKeyDictionaries;
+- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayId:(NSInteger)displayId;
 
 @end
