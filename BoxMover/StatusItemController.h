@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BoxMoverSettings.h"
+#import "BoxMover.h"
 
 @interface StatusItemController : NSObject
 
-- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings;
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings boxMover:(BoxMover *)boxMover;
 
 @end

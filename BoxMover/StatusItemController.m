@@ -14,16 +14,18 @@
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) PreferencesController *preferencesController;
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
+@property (strong, nonatomic) BoxMover *boxMover;
 
 @end
 
 @implementation StatusItemController
 
-- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings {
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings boxMover:(BoxMover *)boxMover {
   self = [super init];
   if (self) {
     self.statusItem = [self createStatusItem];
     self.boxMoverSettings = settings;
+    self.boxMover = boxMover;
   }
 
   return self;
@@ -57,6 +59,7 @@
 
 - (void)openPreferences:(id)sender {
   if(!self.preferencesController) {
+    [self.boxMover removeEvents];
     self.preferencesController = [[PreferencesController alloc] initWithBoxMoverSettings:self.boxMoverSettings];
     [[self.preferencesController window] setLevel: NSPopUpMenuWindowLevel];
     [self.preferencesController showWindow:self];
@@ -65,6 +68,7 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *notification) {
                                                     self.preferencesController = nil;
+                                                    [self.boxMover registerEvents];
                                                   }];
   }
 }

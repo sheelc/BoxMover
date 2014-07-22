@@ -14,5 +14,6 @@
 @property (strong, nonatomic, readonly) NSArray *displays;
 
 - (DisplayInfo *)displayContainingPoint:(CGPoint)point;
+- (CGRect)normalizeRect:(CGRect)rect forDisplay:(DisplayInfo *)displayInfo;
 
 @end

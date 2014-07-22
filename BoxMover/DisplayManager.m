@@ -49,4 +49,11 @@
   return foundDisplay;
 }
 
+- (CGRect)normalizeRect:(CGRect)rect forDisplay:(DisplayInfo *)displayInfo {
+  CGRect normalizedRect = rect;
+  normalizedRect.origin.x += CGRectGetMinX(displayInfo.frame);
+  normalizedRect.origin.y += CGRectGetMinY(displayInfo.frame);
+  return normalizedRect;
+}
+
 @end

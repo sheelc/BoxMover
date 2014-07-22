@@ -35,7 +35,35 @@
 }
 
 - (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayInfo:(DisplayInfo *)displayInfo {
-  return CGRectMake(100.0, 100.0, 1000.0, 800.0);
+  DisplaySetting *foundDisplaySetting;
+  for (DisplaySetting *dispSetting in self.displaySettings) {
+    if (dispSetting.productId == displayInfo.productId) {
+      foundDisplaySetting = dispSetting;
+      break;
+    }
+  }
+
+  AppSetting *foundAppSetting;
+  for (AppSetting *appSetting in foundDisplaySetting.appSettings) {
+    if ([appSetting.name isEqualToString:appName]) {
+      foundAppSetting = appSetting;
+      break;
+    }
+  }
+
+  SizeSetting *foundSizeSetting;
+  for (SizeSetting *sizeSetting in foundAppSetting.sizeSettings) {
+    if ([sizeSetting.srKeyCombo isEqual:keyCombo]) {
+      foundSizeSetting = sizeSetting;
+      break;
+    }
+  }
+
+  CGRect rect = CGRectMake([foundSizeSetting.coordinates[@"x"] floatValue],
+                           [foundSizeSetting.coordinates[@"y"] floatValue],
+                           [foundSizeSetting.coordinates[@"w"] floatValue],
+                           [foundSizeSetting.coordinates[@"h"] floatValue]);
+  return rect;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

@@ -13,6 +13,7 @@
 @interface BoxMover : NSObject
 
 - (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings displayManager:(DisplayManager *)displayManager;
+- (void)removeEvents;
 - (void)registerEvents;
 
 @end

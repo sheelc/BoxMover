@@ -28,8 +28,10 @@
   self.displayManager = [DisplayManager new];
   self.boxSettingsManager = [[BoxSettingsManager alloc] initWithDisplayManager:self.displayManager];
   BoxMoverSettings *settings = [self.boxSettingsManager createBoxMoverSettings];
-  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:settings];
+
   self.boxMover = [[BoxMover alloc] initWithBoxMoverSettings:settings displayManager:self.displayManager];
+
+  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:settings boxMover:self.boxMover];
   [self.boxMover registerEvents];
 }
 
