@@ -14,6 +14,7 @@
   self = [super init];
   if (self) {
     self.appSettings = [NSMutableArray new];
+    self.displayInfo = [DisplayInfo new];
   }
 
   return self;
@@ -23,8 +24,7 @@
   self = [super init];
   if (self) {
     self.appSettings = [aDecoder decodeObjectForKey:@"appSettings"];
-    self.name = [aDecoder decodeObjectForKey:@"name"];
-    self.productId = [aDecoder decodeIntegerForKey:@"productId"];
+    self.displayInfo = [aDecoder decodeObjectForKey:@"displayInfo"];
   }
 
   return self;
@@ -32,8 +32,23 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
   [aCoder encodeObject:self.appSettings forKey:@"appSettings"];
-  [aCoder encodeObject:self.name forKey:@"name"];
-  [aCoder encodeInteger:self.productId forKey:@"productId"];
+  [aCoder encodeObject:self.displayInfo forKey:@"displayInfo"];
+}
+
+- (NSString *)name {
+  return self.displayInfo.name;
+}
+
+- (void)setName:(NSString *)name {
+  self.displayInfo.name = name;
+}
+
+- (NSInteger)productId {
+  return self.displayInfo.productId;
+}
+
+- (void)setProductId:(NSInteger)productId {
+  self.displayInfo.productId = productId;
 }
 
 @end

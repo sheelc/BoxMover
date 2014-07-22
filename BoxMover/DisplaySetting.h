@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DisplayInfo.h"
 
 @interface DisplaySetting : NSObject<NSCoding>
 
+@property (strong, nonatomic) NSMutableArray *appSettings;
+@property (strong, nonatomic) DisplayInfo *displayInfo;
+
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) NSInteger productId;
-@property (strong, nonatomic) NSMutableArray *appSettings;
 
 @end

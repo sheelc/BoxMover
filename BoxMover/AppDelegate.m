@@ -11,11 +11,13 @@
 #import "BoxSettingsManager.h"
 #import "BoxMoverSettings.h"
 #import "BoxMover.h"
+#import "DisplayManager.h"
 
 @interface AppDelegate ()
 
 @property (strong, nonatomic) StatusItemController *statusItemController;
 @property (strong, nonatomic) BoxSettingsManager *boxSettingsManager;
+@property (strong, nonatomic) DisplayManager *displayManager;
 @property (strong, nonatomic) BoxMover *boxMover;
 
 @end
@@ -23,10 +25,11 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  self.boxSettingsManager = [BoxSettingsManager new];
+  self.displayManager = [DisplayManager new];
+  self.boxSettingsManager = [[BoxSettingsManager alloc] initWithDisplayManager:self.displayManager];
   BoxMoverSettings *settings = [self.boxSettingsManager createBoxMoverSettings];
   self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:settings];
-  self.boxMover = [[BoxMover alloc] initWithBoxMoverSettings:settings];
+  self.boxMover = [[BoxMover alloc] initWithBoxMoverSettings:settings displayManager:self.displayManager];
   [self.boxMover registerEvents];
 }
 

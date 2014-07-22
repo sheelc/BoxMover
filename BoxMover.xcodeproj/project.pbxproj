@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */; };
 		5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */; };
+		5019F0DB197E13B6007B39D3 /* DisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DA197E13B6007B39D3 /* DisplayManager.m */; };
+		5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DE197E163F007B39D3 /* DisplayInfo.m */; };
 		5034E69D197B32740075A2BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E69C197B32740075A2BB /* Cocoa.framework */; };
 		5034E6A7197B32740075A2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6A5197B32740075A2BB /* InfoPlist.strings */; };
 		5034E6A9197B32740075A2BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6A8197B32740075A2BB /* main.m */; };
@@ -87,6 +89,10 @@
 		5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRecorderControl.m; sourceTree = "<group>"; };
 		5007E700197CB79A00FC7F5E /* BoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxSettingsManager.h; sourceTree = "<group>"; };
 		5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxSettingsManager.m; sourceTree = "<group>"; };
+		5019F0D9197E13B6007B39D3 /* DisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayManager.h; sourceTree = "<group>"; };
+		5019F0DA197E13B6007B39D3 /* DisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayManager.m; sourceTree = "<group>"; };
+		5019F0DD197E163F007B39D3 /* DisplayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayInfo.h; sourceTree = "<group>"; };
+		5019F0DE197E163F007B39D3 /* DisplayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayInfo.m; sourceTree = "<group>"; };
 		5034E699197B32740075A2BB /* BoxMover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxMover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5034E69C197B32740075A2BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5034E69F197B32740075A2BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -183,6 +189,10 @@
 				5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */,
 				5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */,
 				5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */,
+				5019F0DD197E163F007B39D3 /* DisplayInfo.h */,
+				5019F0DE197E163F007B39D3 /* DisplayInfo.m */,
+				5019F0D9197E13B6007B39D3 /* DisplayManager.h */,
+				5019F0DA197E13B6007B39D3 /* DisplayManager.m */,
 				50B83404197C641600183018 /* DisplaySetting.h */,
 				50B83405197C641600183018 /* DisplaySetting.m */,
 				5034E6B4197B32740075A2BB /* Images.xcassets */,
@@ -333,6 +343,7 @@
 				5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */,
 				5034E6E6197B6F870075A2BB /* PreferencesController.m in Sources */,
 				50B8340C197C644000183018 /* SizeSetting.m in Sources */,
+				5019F0DB197E13B6007B39D3 /* DisplayManager.m in Sources */,
 				50B83406197C641600183018 /* DisplaySetting.m in Sources */,
 				50B83402197C63F100183018 /* BoxMoverSettings.m in Sources */,
 				5034E6D4197B357F0075A2BB /* StatusItemController.m in Sources */,
@@ -340,6 +351,7 @@
 				5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */,
 				5034E6A9197B32740075A2BB /* main.m in Sources */,
 				5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */,
+				5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

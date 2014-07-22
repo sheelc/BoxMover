@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DisplaySetting.h"
 
 @interface BoxMoverSettings : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSMutableArray *displaySettings;
 
 - (NSArray *)allHotKeyDictionaries;
-- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayId:(NSInteger)displayId;
+- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayInfo:(DisplayInfo *)displayInfo;
 
 @end

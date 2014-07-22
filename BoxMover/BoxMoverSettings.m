@@ -7,7 +7,6 @@
 //
 
 #import "BoxMoverSettings.h"
-#import "DisplaySetting.h"
 #import "AppSetting.h"
 #import "SizeSetting.h"
 
@@ -35,7 +34,7 @@
   return [hotKeys allObjects];
 }
 
-- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayId:(NSInteger)displayId {
+- (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayInfo:(DisplayInfo *)displayInfo {
   return CGRectMake(100.0, 100.0, 1000.0, 800.0);
 }
 

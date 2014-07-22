@@ -12,10 +12,20 @@
 @interface BoxSettingsManager ()
 
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
+@property (strong, nonatomic) DisplayManager *displayManager;
 
 @end
 
 @implementation BoxSettingsManager
+
+- (id)initWithDisplayManager:(DisplayManager *)displayManager {
+  self = [super init];
+  if (self) {
+    self.displayManager = displayManager;
+  }
+
+  return self;
+}
 
 - (BoxMoverSettings *)createBoxMoverSettings {
   NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"boxMoverSettings"];
@@ -25,18 +35,17 @@
     self.boxMoverSettings = [BoxMoverSettings new];
   }
 
-  for (NSDictionary *displayDict in [self displays]) {
+  for (DisplayInfo *dispInfo in [self.displayManager displays]) {
     BOOL foundDisplay = NO;
     for (DisplaySetting *dispSetting in self.boxMoverSettings.displaySettings) {
-      if (dispSetting.productId == [displayDict[@"productId"] integerValue]) {
+      if (dispSetting.productId == dispInfo.productId) {
         foundDisplay = YES;
       }
     }
 
     if (!foundDisplay) {
       DisplaySetting *additionalDisplay = [DisplaySetting new];
-      additionalDisplay.name = displayDict[@"name"];
-      additionalDisplay.productId = [displayDict[@"productId"] integerValue];
+      additionalDisplay.displayInfo = dispInfo;
       [self.boxMoverSettings.displaySettings addObject:additionalDisplay];
     }
   }
@@ -47,20 +56,6 @@
 - (void)saveBoxMoverSettings {
   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.boxMoverSettings];
   [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"boxMoverSettings"];
-}
-
-- (NSArray *)displays {
-  NSMutableArray *displayInfos = [NSMutableArray new];
-  for (NSScreen *screen in [NSScreen screens]) {
-    CGDirectDisplayID displayID = (CGDirectDisplayID)[[screen deviceDescription][@"NSScreenNumber"] integerValue];
-    NSDictionary *displayInfo = CFBridgingRelease(IODisplayCreateInfoDictionary(CGDisplayIOServicePort(displayID), 0));
-    NSString *productIDKey = [NSString stringWithCString:kDisplayProductID encoding:NSUTF8StringEncoding];
-    NSString *nameKey = [NSString stringWithCString:kDisplayProductName encoding:NSUTF8StringEncoding];
-
-    [displayInfos addObject:@{@"productId":displayInfo[productIDKey], @"name":displayInfo[nameKey][@"id"]}];
-  }
-
-  return displayInfos;
 }
 
 @end

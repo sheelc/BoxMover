@@ -13,15 +13,17 @@
 @interface BoxMover ()
 
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
+@property (strong, nonatomic) DisplayManager *displayManager;
 
 @end
 
 @implementation BoxMover
 
-- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings {
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings displayManager:(DisplayManager *)displayManager {
   self = [super init];
   if (self) {
     self.boxMoverSettings = settings;
+    self.displayManager = displayManager;
   }
 
   return self;
@@ -79,23 +81,16 @@
   NSLog(@"================> %@", axWindow);
 
 
-  CGPoint origPoint;
-  CFTypeRef origin = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &origPoint));
+  CFTypeRef origin;
   AXUIElementCopyAttributeValue(axWindow, kAXPositionAttribute, &origin);
 
-  CGSize origSize;
-  CFTypeRef origBoxSize = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, &origSize));
-  AXUIElementCopyAttributeValue(axWindow, kAXSizeAttribute, &origBoxSize);
+  CGPoint origPoint;
+  AXValueGetValue(origin, kAXValueCGPointType, &origPoint);
 
-  CGRect origRect = {
-    .origin = origPoint,
-    .size = origSize
-  };
-
-
+  DisplayInfo *dispInfo = [self.displayManager displayContainingPoint:origPoint];
 
   NSString *appName = CFDictionaryGetValue(topMostWindow, kCGWindowOwnerName);
-  CGRect newRect = [self.boxMoverSettings rectForKeyCombo:keyCombo app:appName displayId:0];
+  CGRect newRect = [self.boxMoverSettings rectForKeyCombo:keyCombo app:appName displayInfo:dispInfo];
 
   if (!CGRectEqualToRect(newRect, CGRectZero)) {
     CGPoint point = newRect.origin;

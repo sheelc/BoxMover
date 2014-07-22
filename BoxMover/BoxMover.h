@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BoxMoverSettings.h"
+#import "DisplayManager.h"
 
 @interface BoxMover : NSObject
 
-- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings;
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings displayManager:(DisplayManager *)displayManager;
 - (void)registerEvents;
 
 @end
