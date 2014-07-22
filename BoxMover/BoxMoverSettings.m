@@ -9,6 +9,7 @@
 #import "BoxMoverSettings.h"
 #import "AppSetting.h"
 #import "SizeSetting.h"
+#import "DefaultAppSetting.h"
 
 @implementation BoxMoverSettings
 
@@ -48,6 +49,14 @@
     if ([appSetting.name isEqualToString:appName]) {
       foundAppSetting = appSetting;
       break;
+    }
+  }
+
+  if (!foundAppSetting) {
+    for (AppSetting *appSetting in foundDisplaySetting.appSettings) {
+      if ([appSetting isKindOfClass:[DefaultAppSetting class]]) {
+        foundAppSetting = appSetting;
+      };
     }
   }
 

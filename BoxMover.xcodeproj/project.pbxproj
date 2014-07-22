@@ -11,6 +11,7 @@
 		5007E702197CB79A00FC7F5E /* BoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */; };
 		5019F0DB197E13B6007B39D3 /* DisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DA197E13B6007B39D3 /* DisplayManager.m */; };
 		5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0DE197E163F007B39D3 /* DisplayInfo.m */; };
+		5019F0E2197E40D0007B39D3 /* DefaultAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */; };
 		5034E69D197B32740075A2BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E69C197B32740075A2BB /* Cocoa.framework */; };
 		5034E6A7197B32740075A2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6A5197B32740075A2BB /* InfoPlist.strings */; };
 		5034E6A9197B32740075A2BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034E6A8197B32740075A2BB /* main.m */; };
@@ -93,6 +94,8 @@
 		5019F0DA197E13B6007B39D3 /* DisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayManager.m; sourceTree = "<group>"; };
 		5019F0DD197E163F007B39D3 /* DisplayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayInfo.h; sourceTree = "<group>"; };
 		5019F0DE197E163F007B39D3 /* DisplayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayInfo.m; sourceTree = "<group>"; };
+		5019F0E0197E40D0007B39D3 /* DefaultAppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAppSetting.h; sourceTree = "<group>"; };
+		5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAppSetting.m; sourceTree = "<group>"; };
 		5034E699197B32740075A2BB /* BoxMover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxMover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5034E69C197B32740075A2BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5034E69F197B32740075A2BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -189,6 +192,8 @@
 				5007E701197CB79A00FC7F5E /* BoxSettingsManager.m */,
 				5007E6FA197CA50600FC7F5E /* CustomRecorderControl.h */,
 				5007E6FB197CA50600FC7F5E /* CustomRecorderControl.m */,
+				5019F0E0197E40D0007B39D3 /* DefaultAppSetting.h */,
+				5019F0E1197E40D0007B39D3 /* DefaultAppSetting.m */,
 				5019F0DD197E163F007B39D3 /* DisplayInfo.h */,
 				5019F0DE197E163F007B39D3 /* DisplayInfo.m */,
 				5019F0D9197E13B6007B39D3 /* DisplayManager.h */,
@@ -351,6 +356,7 @@
 				5034E6B0197B32740075A2BB /* AppDelegate.m in Sources */,
 				5034E6A9197B32740075A2BB /* main.m in Sources */,
 				5007E6FC197CA50600FC7F5E /* CustomRecorderControl.m in Sources */,
+				5019F0E2197E40D0007B39D3 /* DefaultAppSetting.m in Sources */,
 				5019F0DF197E163F007B39D3 /* DisplayInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

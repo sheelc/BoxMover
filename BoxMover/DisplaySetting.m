@@ -7,6 +7,7 @@
 //
 
 #import "DisplaySetting.h"
+#import "DefaultAppSetting.h"
 
 @implementation DisplaySetting
 
@@ -14,6 +15,8 @@
   self = [super init];
   if (self) {
     self.appSettings = [NSMutableArray new];
+    [self.appSettings addObject:[DefaultAppSetting new]];
+
     self.displayInfo = [DisplayInfo new];
   }
 
