@@ -61,30 +61,28 @@
     int32_t base = 0;
     CFNumberRef topLayerNumber = CFNumberCreate(CFAllocatorGetDefault(), kCFNumberSInt32Type, &base);
     if (CFNumberCompare(layer, topLayerNumber, NULL) == kCFCompareEqualTo) {
+      CFRelease(topLayerNumber);
       topMostWindow = window;
       break;
     }
+    CFRelease(topLayerNumber);
   }
 
   CFNumberRef pidRef = CFDictionaryGetValue(topMostWindow, kCGWindowOwnerPID);
   pid_t windowPid;
   CFNumberGetValue(pidRef, kCFNumberIntType, &windowPid);
+  CFRelease(pidRef);
 
   AXUIElementRef app = AXUIElementCreateApplication(windowPid);
-
-  NSArray *result;
-  CFArrayRef resultArr = CFBridgingRetain(result);
-
-  AXUIElementCopyAttributeNames(app, &resultArr);
-
   AXUIElementRef axWindow;
   AXUIElementCopyAttributeValue(app, kAXFocusedWindowAttribute, (CFTypeRef *)&axWindow);
+  CFRelease(app);
 
   CFTypeRef origin;
   AXUIElementCopyAttributeValue(axWindow, kAXPositionAttribute, &origin);
-
   CGPoint origPoint;
   AXValueGetValue(origin, kAXValueCGPointType, &origPoint);
+  CFRelease(origin);
 
   DisplayInfo *dispInfo = [self.displayManager displayContainingPoint:origPoint];
 
@@ -97,11 +95,16 @@
     CGPoint point = normalizedRect.origin;
     CFTypeRef position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &point));
     AXUIElementSetAttributeValue(axWindow, kAXPositionAttribute, position);
+    CFRelease(position);
 
     CGSize size = normalizedRect.size;
     CFTypeRef boxSize = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, &size));
     AXUIElementSetAttributeValue(axWindow, kAXSizeAttribute, boxSize);
+    CFRelease(boxSize);
   }
+
+  CFRelease(windowList);
+  CFRelease(axWindow);
 }
 
 @end
