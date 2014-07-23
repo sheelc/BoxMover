@@ -45,6 +45,7 @@
 }
 
 - (void)controllerDidClosePreferences:(StatusItemController *)controller {
+  [self.boxSettingsManager saveBoxMoverSettings];
   [self.boxMover registerEvents];
 }
 

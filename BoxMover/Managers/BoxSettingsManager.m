@@ -56,6 +56,7 @@
 - (void)saveBoxMoverSettings {
   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.boxMoverSettings];
   [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"boxMoverSettings"];
+  [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
