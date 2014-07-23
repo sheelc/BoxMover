@@ -15,6 +15,7 @@
   if (self) {
     self.sizeSettings = [NSMutableArray new];
     self.name = @"New Name";
+    self.editable = YES;
   }
 
   return self;
@@ -25,6 +26,7 @@
   if (self) {
     self.sizeSettings = [aDecoder decodeObjectForKey:@"sizeSettings"];
     self.name = [aDecoder decodeObjectForKey:@"name"];
+    self.editable = [aDecoder decodeBoolForKey:@"editable"];
   }
 
   return self;
@@ -33,6 +35,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
   [aCoder encodeObject:self.sizeSettings forKey:@"sizeSettings"];
   [aCoder encodeObject:self.name forKey:@"name"];
+  [aCoder encodeBool:self.editable forKey:@"editable"];
 }
 
 @end

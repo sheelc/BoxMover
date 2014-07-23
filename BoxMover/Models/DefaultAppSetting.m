@@ -16,6 +16,7 @@ NSString *const kDefaultAppName = @"Default";
   self = [super init];
   if (self) {
     self.name = kDefaultAppName;
+    self.editable = NO;
   }
 
   return self;

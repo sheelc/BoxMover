@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *sizeSettings;
+@property (assign, nonatomic) BOOL editable;
 
 @end

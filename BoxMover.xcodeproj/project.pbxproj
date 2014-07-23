@@ -31,6 +31,7 @@
 		5034E6FF197B7F370075A2BB /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
 		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
+		5074E2D0197F45E300AB7D43 /* AppSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074E2CF197F45E300AB7D43 /* AppSettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		5034E6B2197B32740075A2BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5034E6B4197B32740075A2BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5034E6F2197B7F130075A2BB /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = ShortcutRecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
+		5074E2CE197F45E300AB7D43 /* AppSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsController.h; sourceTree = "<group>"; };
+		5074E2CF197F45E300AB7D43 /* AppSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 		5019F0E4197E449D007B39D3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5074E2CE197F45E300AB7D43 /* AppSettingsController.h */,
+				5074E2CF197F45E300AB7D43 /* AppSettingsController.m */,
 				5019F0E7197E469A007B39D3 /* PreferencesController.h */,
 				5019F0E8197E469A007B39D3 /* PreferencesController.m */,
 				5019F0E9197E469A007B39D3 /* PreferencesController.xib */,
@@ -382,6 +387,7 @@
 				5019F0EE197E469A007B39D3 /* StatusItemController.m in Sources */,
 				5019F10C197E46C2007B39D3 /* CustomRecorderControl.m in Sources */,
 				5019F0F7197E46A5007B39D3 /* DisplayManager.m in Sources */,
+				5074E2D0197F45E300AB7D43 /* AppSettingsController.m in Sources */,
 				5019F104197E46B0007B39D3 /* AppSetting.m in Sources */,
 				5019F0F5197E46A5007B39D3 /* BoxMover.m in Sources */,
 				5019F0F6197E46A5007B39D3 /* BoxSettingsManager.m in Sources */,

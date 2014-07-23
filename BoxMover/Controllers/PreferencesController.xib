@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesController">
@@ -18,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="568" height="381"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="568" height="381"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -101,7 +101,7 @@
                             <rect key="frame" x="1" y="1" width="101" height="293"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" id="Gw2-Pd-8TZ">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Gw2-Pd-8TZ">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="293"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -120,9 +120,34 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                            <connections>
-                                                <binding destination="rrY-tF-fO8" name="value" keyPath="arrangedObjects.name" id="8tA-ln-eoW"/>
-                                            </connections>
+                                            <prototypeCellViews>
+                                                <tableCellView id="eyA-0S-MRQ">
+                                                    <rect key="frame" x="1" y="1" width="98" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-Mi-awu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="btj-h8-zbW">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="eyA-0S-MRQ" name="editable" keyPath="objectValue.editable" id="K2s-Et-hvf"/>
+                                                                <binding destination="eyA-0S-MRQ" name="value" keyPath="objectValue.name" id="y1z-bX-bbI">
+                                                                    <dictionary key="options">
+                                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="textField" destination="C6H-Mi-awu" id="sRI-uk-vy8"/>
+                                                    </connections>
+                                                </tableCellView>
+                                            </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
@@ -479,7 +504,7 @@
                 </binding>
             </connections>
         </arrayController>
-        <arrayController objectClassName="AppSetting" automaticallyPreparesContent="YES" id="rrY-tF-fO8" userLabel="Apps">
+        <arrayController objectClassName="AppSetting" automaticallyPreparesContent="YES" id="rrY-tF-fO8" userLabel="Apps" customClass="AppSettingsController">
             <connections>
                 <binding destination="SMS-hi-mxJ" name="contentArray" keyPath="selection.appSettings" id="Wxp-2I-RaD"/>
             </connections>
