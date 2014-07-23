@@ -10,8 +10,19 @@
 #import "BoxMoverSettings.h"
 #import "BoxMover.h"
 
+@protocol StatusItemControllerDelegate;
+
 @interface StatusItemController : NSObject
 
-- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings boxMover:(BoxMover *)boxMover;
+@property (weak, nonatomic) id<StatusItemControllerDelegate> delegate;
+
+- (id)initWithBoxMoverSettings:(BoxMoverSettings *)settings;
+
+@end
+
+@protocol StatusItemControllerDelegate
+
+- (void)controllerWillOpenPreferences:(StatusItemController *)controller;
+- (void)controllerDidClosePreferences:(StatusItemController *)controller;
 
 @end

@@ -13,7 +13,7 @@
 #import "BoxMover.h"
 #import "DisplayManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<StatusItemControllerDelegate>
 
 @property (strong, nonatomic) StatusItemController *statusItemController;
 @property (strong, nonatomic) BoxSettingsManager *boxSettingsManager;
@@ -31,12 +31,21 @@
 
   self.boxMover = [[BoxMover alloc] initWithBoxMoverSettings:settings displayManager:self.displayManager];
 
-  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:settings boxMover:self.boxMover];
+  self.statusItemController = [[StatusItemController alloc] initWithBoxMoverSettings:settings];
+  self.statusItemController.delegate = self;
   [self.boxMover registerEvents];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
   [self.boxSettingsManager saveBoxMoverSettings];
+}
+
+- (void)controllerWillOpenPreferences:(StatusItemController *)controller {
+  [self.boxMover removeEvents];
+}
+
+- (void)controllerDidClosePreferences:(StatusItemController *)controller {
+  [self.boxMover registerEvents];
 }
 
 @end
