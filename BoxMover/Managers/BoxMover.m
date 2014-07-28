@@ -78,8 +78,12 @@
   AXUIElementCopyAttributeValue(app, kAXFocusedWindowAttribute, (CFTypeRef *)&axWindow);
   CFRelease(app);
 
-  CFTypeRef origin;
+  CFTypeRef origin = nil;
   AXUIElementCopyAttributeValue(axWindow, kAXPositionAttribute, &origin);
+  if (!origin) {
+    return;
+  }
+
   CGPoint origPoint;
   AXValueGetValue(origin, kAXValueCGPointType, &origPoint);
   CFRelease(origin);
