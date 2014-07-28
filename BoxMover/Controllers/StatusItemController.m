@@ -33,7 +33,8 @@
   NSStatusItem* item = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 
   item.menu = [self createMenuBar];
-  item.title = @"BM";
+  item.image = [NSImage imageNamed:@"trimmed"];
+  item.alternateImage = [NSImage imageNamed:@"trimmed_white"];
   item.highlightMode = YES;
 
   return item;
