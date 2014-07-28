@@ -9,6 +9,8 @@
 #import "BoxSettingsManager.h"
 #import "DisplaySetting.h"
 
+NSString *const kBoxMoverSettingsKey = @"kBoxMoverSettingsKey";
+
 @interface BoxSettingsManager ()
 
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
@@ -28,7 +30,7 @@
 }
 
 - (BoxMoverSettings *)createBoxMoverSettings {
-  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"boxMoverSettings"];
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kBoxMoverSettingsKey];
   if (data) {
     self.boxMoverSettings = [NSKeyedUnarchiver unarchiveObjectWithData:data];
   } else {
@@ -55,7 +57,7 @@
 
 - (void)saveBoxMoverSettings {
   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.boxMoverSettings];
-  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"boxMoverSettings"];
+  [[NSUserDefaults standardUserDefaults] setObject:data forKey:kBoxMoverSettingsKey];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

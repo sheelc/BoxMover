@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic, readonly) NSArray *displays;
 
+- (void)refreshDisplays;
 - (DisplayInfo *)displayContainingPoint:(CGPoint)point;
 - (CGRect)normalizeRect:(CGRect)rect forDisplay:(DisplayInfo *)displayInfo;
 

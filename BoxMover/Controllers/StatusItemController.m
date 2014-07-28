@@ -66,6 +66,7 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *notification) {
                                                     self.preferencesController = nil;
+                                                    [[NSNotificationCenter defaultCenter] removeObserver:self];
                                                     [self.delegate controllerDidClosePreferences:self];
                                                   }];
   }

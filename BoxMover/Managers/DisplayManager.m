@@ -18,24 +18,29 @@
 
 - (NSArray *)displays {
   if (!_displays) {
-    NSMutableArray *displayInfos = [NSMutableArray new];
-    for (NSScreen *screen in [NSScreen screens]) {
-      CGDirectDisplayID displayID = (CGDirectDisplayID)[[screen deviceDescription][@"NSScreenNumber"] integerValue];
-      NSDictionary *displayInfo = CFBridgingRelease(IODisplayCreateInfoDictionary(CGDisplayIOServicePort(displayID), 0));
-      NSString *productIDKey = [NSString stringWithCString:kDisplayProductID encoding:NSUTF8StringEncoding];
-      NSString *nameKey = [NSString stringWithCString:kDisplayProductName encoding:NSUTF8StringEncoding];
-
-      DisplayInfo *info = [DisplayInfo new];
-      info.productId = [displayInfo[productIDKey] integerValue];
-      info.name = displayInfo[nameKey][@"id"];
-      info.frame = screen.frame;
-      [displayInfos addObject:info];
-    }
-
-    _displays = displayInfos;
+    [self refreshDisplays];
   }
 
   return _displays;
+}
+
+- (void)refreshDisplays {
+  NSMutableArray *displayInfos = [NSMutableArray new];
+  for (NSScreen *screen in [NSScreen screens]) {
+    CGDirectDisplayID displayID = (CGDirectDisplayID)[[screen deviceDescription][@"NSScreenNumber"] integerValue];
+    NSDictionary *displayInfo = CFBridgingRelease(IODisplayCreateInfoDictionary(CGDisplayIOServicePort(displayID), 0));
+    NSString *productIDKey = [NSString stringWithCString:kDisplayProductID encoding:NSUTF8StringEncoding];
+    NSString *nameKey = [NSString stringWithCString:kDisplayProductName encoding:NSUTF8StringEncoding];
+
+    DisplayInfo *info = [DisplayInfo new];
+    info.productId = [displayInfo[productIDKey] integerValue];
+    info.name = displayInfo[nameKey][@"id"];
+    info.frame = screen.frame;
+    [displayInfos addObject:info];
+  }
+
+  _displays = displayInfos;
+  NSLog(@"================> %@", _displays);
 }
 
 - (DisplayInfo *)displayContainingPoint:(CGPoint)point {

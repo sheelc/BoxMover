@@ -40,6 +40,14 @@
   [self.boxSettingsManager saveBoxMoverSettings];
 }
 
+- (void)applicationDidChangeScreenParameters:(NSNotification *)notification {
+  [self.boxMover removeEvents];
+  [self.displayManager refreshDisplays];
+  [self.boxMover registerEvents];
+}
+
+# pragma mark - <StatusItemControllerDelegate>
+
 - (void)controllerWillOpenPreferences:(StatusItemController *)controller {
   [self.boxMover removeEvents];
 }
