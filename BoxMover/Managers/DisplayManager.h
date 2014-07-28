@@ -16,5 +16,6 @@
 - (void)refreshDisplays;
 - (DisplayInfo *)displayContainingPoint:(CGPoint)point;
 - (CGRect)normalizeRect:(CGRect)rect forDisplay:(DisplayInfo *)displayInfo;
+- (CGRect)rectOnNextDisplay:(CGRect)currentRect;
 
 @end

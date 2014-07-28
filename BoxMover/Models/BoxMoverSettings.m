@@ -17,6 +17,7 @@
   self = [super init];
   if (self) {
     self.displaySettings = [NSMutableArray new];
+    self.otherMonitorCombo = [NSMutableDictionary new];
   }
 
   return self;
@@ -30,6 +31,10 @@
         [hotKeys addObject:sizeSetting.srKeyCombo];
       }
     }
+  }
+
+  if (self.otherMonitorCombo) {
+    [hotKeys addObject:self.otherMonitorCombo];
   }
 
   return [hotKeys allObjects];
@@ -77,12 +82,14 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   self.displaySettings = [aDecoder decodeObjectForKey:@"displaySettings"];
+  self.otherMonitorCombo = [aDecoder decodeObjectForKey:@"otherMonitorCombo"];
 
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
   [aCoder encodeObject:self.displaySettings forKey:@"displaySettings"];
+  [aCoder encodeObject:self.otherMonitorCombo forKey:@"otherMonitorCombo"];
 }
 
 @end

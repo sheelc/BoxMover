@@ -84,14 +84,35 @@
   AXValueGetValue(origin, kAXValueCGPointType, &origPoint);
   CFRelease(origin);
 
+  CFTypeRef size;
+  AXUIElementCopyAttributeValue(axWindow, kAXSizeAttribute, &size);
+  CGSize origSize;
+  AXValueGetValue(size, kAXValueCGSizeType, &origSize);
+  CFRelease(size);
+
   DisplayInfo *dispInfo = [self.displayManager displayContainingPoint:origPoint];
 
   NSString *appName = CFDictionaryGetValue(topMostWindow, kCGWindowOwnerName);
   NSDictionary *keyCombo = hotKey.object;
-  CGRect newRect = [self.boxMoverSettings rectForKeyCombo:keyCombo app:appName displayInfo:dispInfo];
 
-  if (!CGRectEqualToRect(newRect, CGRectZero)) {
-    CGRect normalizedRect = [self.displayManager normalizeRect:newRect forDisplay:dispInfo];
+  CGRect normalizedRect;
+  if ([self.boxMoverSettings.otherMonitorCombo isEqualTo:keyCombo]) {
+    CGRect currentRect = {
+      .origin = origPoint,
+      .size = origSize
+    };
+    normalizedRect = [self.displayManager rectOnNextDisplay:currentRect];
+  } else {
+    CGRect newRect = [self.boxMoverSettings rectForKeyCombo:keyCombo app:appName displayInfo:dispInfo];
+    normalizedRect = newRect;
+
+    if (!CGRectEqualToRect(newRect, CGRectZero)) {
+      normalizedRect = [self.displayManager normalizeRect:newRect forDisplay:dispInfo];
+    }
+  }
+
+  if (!CGRectEqualToRect(normalizedRect, CGRectZero)) {
+
     CGPoint point = normalizedRect.origin;
     CFTypeRef position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &point));
     AXUIElementSetAttributeValue(axWindow, kAXPositionAttribute, position);

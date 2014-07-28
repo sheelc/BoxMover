@@ -39,14 +39,13 @@
     [displayInfos addObject:info];
   }
 
-  _displays = displayInfos;
-  NSLog(@"================> %@", _displays);
+  self.displays = displayInfos;
 }
 
 - (DisplayInfo *)displayContainingPoint:(CGPoint)point {
   DisplayInfo *foundDisplay = nil;
   for (DisplayInfo *displayInfo in self.displays) {
-    if (CGRectContainsPoint(displayInfo.frame, point)) {
+    if (CGRectGetMinX(displayInfo.frame) <= point.x && point.x < CGRectGetMaxX(displayInfo.frame)) {
       foundDisplay = displayInfo;
     }
   }
@@ -59,6 +58,55 @@
   normalizedRect.origin.x += CGRectGetMinX(displayInfo.frame);
   normalizedRect.origin.y += CGRectGetMinY(displayInfo.frame);
   return normalizedRect;
+}
+
+- (CGRect)rectOnNextDisplay:(CGRect)currentRect {
+  DisplayInfo *currentDisplay = [self displayContainingPoint:currentRect.origin];
+  DisplayInfo *rightmostDisplay = [self rightmostDisplay];
+  CGRect nextDisplayFrame;
+  if (currentDisplay == rightmostDisplay) {
+    nextDisplayFrame = [[self leftmostDisplay] frame];
+  } else {
+    CGPoint originOnNextDisplay = {
+      .y = currentRect.origin.y,
+      .x = CGRectGetMaxX(currentDisplay.frame) + 1.0,
+    };
+
+    nextDisplayFrame = [[self displayContainingPoint:originOnNextDisplay] frame];
+  }
+
+  CGFloat xOffset = (currentRect.origin.x - currentDisplay.frame.origin.x) / currentDisplay.frame.size.width;
+  CGFloat yOffset = (currentRect.origin.y - currentDisplay.frame.origin.y) / currentDisplay.frame.size.height;
+
+  CGRect newRect = {
+    .origin.x = xOffset * nextDisplayFrame.size.width + nextDisplayFrame.origin.x,
+    .origin.y = yOffset * nextDisplayFrame.size.height + nextDisplayFrame.origin.y,
+    .size = currentRect.size
+  };
+
+  return newRect;
+}
+
+- (DisplayInfo *)rightmostDisplay {
+  DisplayInfo *rightmost;
+  for (DisplayInfo *dispInfo in self.displays) {
+    if (CGRectGetMaxX(dispInfo.frame) > CGRectGetMaxX(rightmost.frame)) {
+      rightmost = dispInfo;
+    }
+  }
+
+  return rightmost;
+}
+
+- (DisplayInfo *)leftmostDisplay {
+  DisplayInfo *leftmost;
+  for (DisplayInfo *dispInfo in self.displays) {
+    if (CGRectGetMinX(dispInfo.frame) <= CGRectGetMinX(leftmost.frame)) {
+      leftmost = dispInfo;
+    }
+  }
+
+  return leftmost;
 }
 
 @end

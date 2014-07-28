@@ -18,6 +18,7 @@
 @interface PreferencesController ()<NSTableViewDelegate>
 
 @property (strong, nonatomic) BoxMoverSettings *boxMoverSettings;
+@property (weak) IBOutlet SRRecorderControl *otherMonitorCombo;
 
 @end
 
@@ -29,6 +30,12 @@
     self.boxMoverSettings = settings;
   }
   return self;
+}
+
+- (void)awakeFromNib {
+  [super awakeFromNib];
+
+  [self.otherMonitorCombo bind:NSValueBinding toObject:self.boxMoverSettings withKeyPath:@"otherMonitorCombo" options:nil];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {

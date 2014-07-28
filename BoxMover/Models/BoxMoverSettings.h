@@ -12,6 +12,7 @@
 @interface BoxMoverSettings : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSMutableArray *displaySettings;
+@property (strong, nonatomic) NSMutableDictionary *otherMonitorCombo;
 
 - (NSArray *)allHotKeyDictionaries;
 - (CGRect)rectForKeyCombo:(NSDictionary *)keyCombo app:(NSString *)appName displayInfo:(DisplayInfo *)displayInfo;
