@@ -112,7 +112,6 @@
   }
 
   if (!CGRectEqualToRect(normalizedRect, CGRectZero)) {
-
     CGPoint point = normalizedRect.origin;
     CFTypeRef position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, &point));
     AXUIElementSetAttributeValue(axWindow, kAXPositionAttribute, position);

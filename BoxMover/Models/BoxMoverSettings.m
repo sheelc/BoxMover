@@ -57,12 +57,11 @@
     }
   }
 
-  if (!foundAppSetting) {
-    for (AppSetting *appSetting in foundDisplaySetting.appSettings) {
-      if ([appSetting isKindOfClass:[DefaultAppSetting class]]) {
-        foundAppSetting = appSetting;
-      };
-    }
+  AppSetting *defaultAppSetting;
+  for (AppSetting *appSetting in foundDisplaySetting.appSettings) {
+    if ([appSetting isKindOfClass:[DefaultAppSetting class]]) {
+      defaultAppSetting = appSetting;
+    };
   }
 
   SizeSetting *foundSizeSetting;
@@ -70,6 +69,15 @@
     if ([sizeSetting.srKeyCombo isEqual:keyCombo]) {
       foundSizeSetting = sizeSetting;
       break;
+    }
+  }
+
+  if (!foundSizeSetting) {
+    for (SizeSetting *sizeSetting in defaultAppSetting.sizeSettings) {
+      if ([sizeSetting.srKeyCombo isEqual:keyCombo]) {
+        foundSizeSetting = sizeSetting;
+        break;
+      }
     }
   }
 
