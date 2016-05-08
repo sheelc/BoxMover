@@ -29,8 +29,8 @@
 		5034E6B5197B32740075A2BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5034E6B4197B32740075A2BB /* Images.xcassets */; };
 		5034E6FE197B7F370075A2BB /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
 		5034E6FF197B7F370075A2BB /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
-		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; };
-		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; };
+		5034E705197B7F910075A2BB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6F9197B7F130075A2BB /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5034E706197B7F910075A2BB /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5034E6FB197B7F130075A2BB /* PTHotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5074E2D0197F45E300AB7D43 /* AppSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074E2CF197F45E300AB7D43 /* AppSettingsController.m */; };
 /* End PBXBuildFile section */
 
@@ -310,7 +310,7 @@
 		5034E691197B32740075A2BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Sheel Choksi";
 			};
 			buildConfigurationList = 5034E694197B32740075A2BB /* Build configuration list for PBXProject "BoxMover" */;
@@ -459,6 +459,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -533,6 +534,7 @@
 				GCC_PREFIX_HEADER = "BoxMover/BoxMover-Prefix.pch";
 				INFOPLIST_FILE = "BoxMover/BoxMover-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheelscode.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -547,6 +549,7 @@
 				GCC_PREFIX_HEADER = "BoxMover/BoxMover-Prefix.pch";
 				INFOPLIST_FILE = "BoxMover/BoxMover-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheelscode.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C718E531A06D8D71275A6476C2E2106DFE43B25",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "97641889692A69A4B270231FB25F4B84FB93CA0B" : 0,
+    "2C718E531A06D8D71275A6476C2E2106DFE43B25" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6CD85884-F26E-4462-A625-15F52143D504",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "97641889692A69A4B270231FB25F4B84FB93CA0B" : "BoxMover\/External\/ShortcutRecorder\/",
+    "2C718E531A06D8D71275A6476C2E2106DFE43B25" : "BoxMover\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BoxMover",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BoxMover.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:sheelc\/BoxMover.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C718E531A06D8D71275A6476C2E2106DFE43B25"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Kentzo\/ShortcutRecorder",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "97641889692A69A4B270231FB25F4B84FB93CA0B"
+    }
+  ]
+}
